@@ -13,8 +13,8 @@ public class Main {
 	static String fixConversion;
 	static char conversion;
 
-	static HashMap encryptionKeyAndValue;
-	static HashMap decryptionKeyAndValue;
+	static HashMap<String, String> encryptionKeyAndValue;
+	static HashMap<String, String> decryptionKeyAndValue;
 
 	static boolean stopRunning = true;
 
@@ -55,6 +55,8 @@ public class Main {
 				break;
 
 			}
+			
+			modify.setLength(0);
 
 		} while (!(stopRunning));
 
@@ -62,7 +64,7 @@ public class Main {
 
 	public static void keyAndValueConversion() {
 
-		encryptionKeyAndValue = new HashMap();
+		encryptionKeyAndValue = new HashMap<String, String>();
 
 		encryptionKeyAndValue.put("a", "z");
 		encryptionKeyAndValue.put("b", "y");
@@ -135,11 +137,15 @@ public class Main {
 		}
 		// return modify;
 		System.out.println(modify.toString());
+		
+		
+		
+	
 	}// Encryption
 
 	public static void keyAndValueUnconversion() {
 
-		decryptionKeyAndValue = new HashMap();
+		decryptionKeyAndValue = new HashMap<String, String>();
 
 		decryptionKeyAndValue.put("z", "a");
 		decryptionKeyAndValue.put("y", "b");
@@ -211,7 +217,11 @@ public class Main {
 
 		}
 		// return modify;
+		
 		System.out.println(modify.toString());
+		
+		
+		
 	}// decryption
 
 	public static boolean tryCatch(String wordEncryptedMenu) {
